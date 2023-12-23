@@ -1,10 +1,11 @@
 def bubble_sort(array)
-  0.upto(array.size - 2) do |index|
-    if array[index] > array[index + 1]
-      array[index], array[index + 1] = array[index + 1], array[index]
+  (array.size - 1).downto(0) do |i|
+    0.upto(i - 1) do |j|
+      next unless array[j] > array[j + 1]
+        array[j], array[j + 1] = array[j + 1], array[j]
     end
   end
-  p array
+  array
 end
 
-bubble_sort([6, 3, 8, 5, 10, 7, 1])
+p bubble_sort([6, 3, 8, 5, 10, 7, 1])
